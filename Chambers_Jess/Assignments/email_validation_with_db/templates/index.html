@@ -1,0 +1,42 @@
+<html>
+    <head>
+       <title>Email Validation With Database</title>
+    </head>
+    <style>
+    span {
+        border: 1px solid grey;
+        padding: 5px;
+        color:  white;
+        background-color: {{ session['class'] }};
+    }
+
+    .hide { display: none; }
+
+    .show { display: block; }
+
+    </style>
+    <body>
+      <h3>Enter an Email Address</h3>
+      {% with messages = get_flashed_messages() %}
+       {% if messages %}
+         {% for message in messages %}
+           <p><span>{{message}}</span></p>
+         {% endfor %}
+       {% endif %}
+     {% endwith %}
+      <form class="{{ session['form']}}" action='/process' method='post'>
+          Email: <input type='text' name='email'>
+          <input type='submit' value='Submit'>
+      </form>
+      <div id="box" class="{{ session['database']}}">
+          <h3>Email Addresses Entered:</h3>
+          {% for user in all_addresses: %}
+          <p>{{ user['email'] }}</p>
+          <p>{{ user['created_at'] }}</p>
+          {% endfor %}
+        </div>
+        <div>
+            <a href="/clear">RESET</a>
+        </div>
+    </body>
+</html>
