@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Survey Submitted</title>
+<style>
+    * {
+        text-align: center;
+    }
+    .green {
+        background: lightgreen;
+    }
+
+    h2  {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+    <p class="green">
+        Thanks for submitting this form! You have submitted this form {{ session['count'] }} times now.
+    </p><br>
+    <h2>Submitted Information</h2><br>
+    <p>
+        Name:{{ session['name'] }}<br>
+        Dojo Location: {{ session['location'] }}<br>
+        Favorite Language: {{ session['language'] }}<br>
+        Comment: {{ session['comment'] }}
+    </p><br>
+    <a href="/"><button>Go Back</button></a>
+</body>
+</html>

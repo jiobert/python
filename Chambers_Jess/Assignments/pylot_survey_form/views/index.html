@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    </head>
+    <style>
+    * {
+        text-align: center
+    }
+
+    form {
+        border: 1px solid grey;
+        display: inline-block;
+        padding: 10px;
+    }
+    </style>
+    <body>
+        <form action='/process' method='POST'>
+            <form action='/users' method='post'>
+                  Your Name: <input type='text' name='name'><br>
+                  Dojo Location:
+                  <select name='location'>
+                  <option value="Dallas">Dallas</option>
+                  <option value="San Jose">San Jose</option>
+                  <option value="Seattle">Seattle</option>
+                  </select><br>
+                  Favorite Languate
+                  <select name='language'>
+                  <option value="Python">Python</option>
+                  <option value="Ruby">Ruby</option>
+                  <option value="JavaScript">JavaScript</option>
+                  </select><br>
+                  Comment (optional):
+                  <input type='textarea' name='comment'>
+                  <input type='submit' value='Submit Survey'>
+            </form>
+
+            <label for="comment">Comment:<br><textarea name="comment" rows="8" cols="40"></textarea></label>
+        </form>
+    </body>
+</html>
